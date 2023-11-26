@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Among Us</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: "Lucida Console", monaco, monospace;
+            background-color: indianred;
+        }
+
+        h1 {
+            color: #000000;
+            background-color: indianred;
+            font-size: xx-large;
+            font-weight: 700;
+        }
+
+        h3 {
+            color: #000000;
+            font-size: 23px;
+        }
+
+        button {
+            color: #000000;
+            border-radius: 9px;
+            font-family: "Lucida Console", monaco, monospace;
+            font-weight: 700;
+            font-size: larger;
+            box-shadow: none;
+            outline: none;
+            height: 30px;
+            border-style: solid;
+            border-color: #000000;
+            border-width: 3px;
+            background-color: indianred;
+        }
+
+        button:hover {
+            background-color: #000000;
+            color: indianred;
+        }
+
+        select {
+            color: indianred;
+            height: 25px;
+            background-color: #000000;
+            border-radius: 9px;
+            font-family: "Lucida Console", monaco, monospace;
+            border: 0;
+            box-shadow: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Role:</h1>
+    <h3 id="role"></h3>
+    <h1>Tasks:</h1>
+    <h3 id="tasks1"></h3>
+    <h3 id="tasks2"></h3>
+    <h3 id="tasks3"></h3>
+    </ br>
+    <button id="getTs" value="getTs" onclick="getInfo()">Get Info</button>
+    <button id="reset" value="reset" onclick="reset()">Reset</button>
+</body>
+<script>
+
+    function random() {
+        return (Math.random() * (3 - 1) + 1).toFixed();
+    }
+
+    var task11 = "Reboot computer (Just mime a rebooting action)";
+    var task12 = "Prepare bed (1. top) (2. bottom) (3. upstairs)";
+    var task13 = "Fix bench (just play about with it)";
+    var task21 = "Polish mirrors (1. corridor) (2. living room) (3. upstairs)";
+    var task22 = "Fix electricity";
+    var task23 = "Fix heater (just play about with it)";
+    var task31 = "Fix generator (get 1km on the bike";
+    var task32 = "Reorder items (Size order) (1. juices) (2. jackets) (3. pillows) (4. weights)";
+    var task33 = "Fix table (just play about with it)";
+
+    let firstRole = 0;
+    let fftask = 0;
+    let fstask = 0;
+    let fttask = 0;
+
+    let secondRole = 0;
+    let sftask = 0;
+    let sstask = 0;
+    let sttask = 0;
+
+    let count = 0;
+
+    function getInfo() {
+        count++;
+        if (count == 1) {
+            getinfo1();
+        } else if (count == 2) {
+            getinfo2();
+        } else if (count == 3) {
+            getinfo3();
+        } else {
+
+        }
+    }
+
+    function getinfo1() {
+        let num = parseInt(random() + random());
+        let nuum = parseInt(random() + random());
+        let nuuum = parseInt(random() + random());
+        let rol = parseInt(random());
+        while (nuum === num) {
+            nuum = parseInt(random() + random());
+            if (nuum != num) {
+                break;
+            }
+        }
+        while (nuuum === num || nuuum === nuum) {
+            nuuum = parseInt(random() + random());
+            if (nuuum != num && nuuum != nuum) {
+                break;
+            }
+        }
+        switch (num) {
+            case 11:
+                document.getElementById("tasks1").innerHTML = (task11);
+                fftask = 11;
+                break;
+            case 12:
+                document.getElementById("tasks1").innerHTML = (task12);
+                fftask = 12;
+                break;
+            case 13:
+                document.getElementById("tasks1").innerHTML = (task13);
+                fftask = 13;
+                break;
+            case 21:
+                document.getElementById("tasks1").innerHTML = (task21);
+                fftask = 21;
+                break;
+            case 22:
+                document.getElementById("tasks1").innerHTML = (task22);
+                fftask = 22;
+                break;
+            case 23:
+                document.getElementById("tasks1").innerHTML = (task23);
+                fftask = 23;
+                break;
+            case 31:
+                document.getElementById("tasks1").innerHTML = (task31);
+                fftask = 31;
+                break;
+            case 32:
+                document.getElementById("tasks1").innerHTML = (task32);
+                fftask = 32;
+                break;
+            case 33:
+                document.getElementById("tasks1").innerHTML = (task33);
+                fftask = 33;
+                break;
+
+        }
+        switch (nuum) {
+            case 11:
+                document.getElementById("tasks2").innerHTML = (task11);
+                fstask = 11;
+                break;
+            case 12:
+                document.getElementById("tasks2").innerHTML = (task12);
+                fstask = 12;
+                break;
+            case 13:
+                document.getElementById("tasks2").innerHTML = (task13);
+                fstask = 13;
+                break;
+            case 21:
+                document.getElementById("tasks2").innerHTML = (task21);
+                fstask = 21;
+                break;
+            case 22:
+                document.getElementById("tasks2").innerHTML = (task22);
+                fstask = 22;
+                break;
+            case 23:
+                document.getElementById("tasks2").innerHTML = (task23);
+                fstask = 23;
+                break;
+            case 31:
+                document.getElementById("tasks2").innerHTML = (task31);
+                fstask = 31;
+                break;
+            case 32:
+                document.getElementById("tasks2").innerHTML = (task32);
+                fstask = 32;
+                break;
+            case 33:
+                document.getElementById("tasks2").innerHTML = (task33);
+                fstask = 33;
+                break;
+        }
+
+        switch (nuuum) {
+            case 11:
+                document.getElementById("tasks3").innerHTML = (task11);
+                fttask = 11;
+                break;
+            case 12:
+                document.getElementById("tasks3").innerHTML = (task12);
+                fttask = 12;
+                break;
+            case 13:
+                document.getElementById("tasks3").innerHTML = (task13);
+                fttask = 13;
+                break;
+            case 21:
+                document.getElementById("tasks3").innerHTML = (task21);
+                fttask = 21;
+                break;
+            case 22:
+                document.getElementById("tasks3").innerHTML = (task22);
+                fttask = 22;
+                break;
+            case 23:
+                document.getElementById("tasks3").innerHTML = (task23);
+                fttask = 23;
+                break;
+            case 31:
+                document.getElementById("tasks3").innerHTML = (task31);
+                fttask = 31;
+                break;
+            case 32:
+                document.getElementById("tasks3").innerHTML = (task32);
+                fttask = 32;
+                break;
+            case 33:
+                document.getElementById("tasks3").innerHTML = (task33);
+                fttask = 33;
+                break;
+        }
+
+        switch (rol) {
+            case 1:
+                document.getElementById("role").innerHTML = "Crewmate";
+                firstRole = 1;
+                break;
+            case 2:
+                document.getElementById("role").innerHTML = "Imposter";
+                firstRole = 2;
+                break;
+            case 3:
+                document.getElementById("role").innerHTML = "Crewmate";
+                firstRole = 3;
+                break;
+        }
+    }
+
+    function getinfo2() {
+        let num = parseInt(random() + random());
+        let nuum = parseInt(random() + random());
+        let nuuum = parseInt(random() + random());
+        let rol = parseInt(random());
+        while (num === fftask || num === fstask || num === fttask) {
+            num = parseInt(random() + random());
+            if (num != fftask && num != fstask && num != fttask) {
+                break;
+            }
+        }
+        while (nuum === num || nuum === fftask || nuum === fstask || nuum === fttask) {
+            nuum = parseInt(random() + random());
+            if (nuum != num && nuum != fftask && nuum != fstask && nuum != fttask) {
+                break;
+            }
+        }
+        while (nuuum === num || nuuum === nuum || nuuum === fftask || nuuum === fstask || nuuum === fttask) {
+            nuuum = parseInt(random() + random());
+            if (nuuum != num && nuuum != nuum && nuuum != fftask && nuuum != fstask && nuuum != fttask) {
+                break;
+            }
+        }
+        while (rol === firstRole) {
+            rol = parseInt(random());
+            if (rol != firstRole) {
+                break;
+            }
+        }
+        switch (num) {
+            case 11:
+                document.getElementById("tasks1").innerHTML = (task11);
+                sftask = 11;
+                break;
+            case 12:
+                document.getElementById("tasks1").innerHTML = (task12);
+                sftask = 12;
+                break;
+            case 13:
+                document.getElementById("tasks1").innerHTML = (task13);
+                sftask = 13;
+                break;
+            case 21:
+                document.getElementById("tasks1").innerHTML = (task21);
+                sftask = 21;
+                break;
+            case 22:
+                document.getElementById("tasks1").innerHTML = (task22);
+                sftask = 22;
+                break;
+            case 23:
+                document.getElementById("tasks1").innerHTML = (task23);
+                sftask = 23;
+                break;
+            case 31:
+                document.getElementById("tasks1").innerHTML = (task31);
+                sftask = 31;
+                break;
+            case 32:
+                document.getElementById("tasks1").innerHTML = (task32);
+                sftask = 32;
+                break;
+            case 33:
+                document.getElementById("tasks1").innerHTML = (task33);
+                sftask = 33;
+                break;
+
+        }
+        switch (nuum) {
+            case 11:
+                document.getElementById("tasks2").innerHTML = (task11);
+                sstask = 11;
+                break;
+            case 12:
+                document.getElementById("tasks2").innerHTML = (task12);
+                sstask = 12;
+                break;
+            case 13:
+                document.getElementById("tasks2").innerHTML = (task13);
+                sstask = 13;
+                break;
+            case 21:
+                document.getElementById("tasks2").innerHTML = (task21);
+                sstask = 21;
+                break;
+            case 22:
+                document.getElementById("tasks2").innerHTML = (task22);
+                sstask = 22;
+                break;
+            case 23:
+                document.getElementById("tasks2").innerHTML = (task23);
+                sstask = 23;
+                break;
+            case 31:
+                document.getElementById("tasks2").innerHTML = (task31);
+                sstask = 31;
+                break;
+            case 32:
+                document.getElementById("tasks2").innerHTML = (task32);
+                sstask = 32;
+                break;
+            case 33:
+                document.getElementById("tasks2").innerHTML = (task33);
+                sstask = 33;
+                break;
+        }
+
+        switch (nuuum) {
+            case 11:
+                document.getElementById("tasks3").innerHTML = (task11);
+                sttask = 11;
+                break;
+            case 12:
+                document.getElementById("tasks3").innerHTML = (task12);
+                sttask = 12;
+                break;
+            case 13:
+                document.getElementById("tasks3").innerHTML = (task13);
+                sttask = 13;
+                break;
+            case 21:
+                document.getElementById("tasks3").innerHTML = (task21);
+                sttask = 21;
+                break;
+            case 22:
+                document.getElementById("tasks3").innerHTML = (task22);
+                sttask = 22;
+                break;
+            case 23:
+                document.getElementById("tasks3").innerHTML = (task23);
+                sttask = 23;
+                break;
+            case 31:
+                document.getElementById("tasks3").innerHTML = (task31);
+                sttask = 31;
+                break;
+            case 32:
+                document.getElementById("tasks3").innerHTML = (task32);
+                sttask = 32;
+                break;
+            case 33:
+                document.getElementById("tasks3").innerHTML = (task33);
+                sttask = 33;
+                break;
+        }
+
+        switch (rol) {
+            case 1:
+                document.getElementById("role").innerHTML = "Crewmate";
+                secondRole = 1;
+                break;
+            case 2:
+                document.getElementById("role").innerHTML = "Imposter";
+                secondRole = 2;
+                break;
+            case 3:
+                document.getElementById("role").innerHTML = "Crewmate";
+                secondRole = 3;
+                break;
+        }
+    }
+
+    function getinfo3() {
+        let num = parseInt(random() + random());
+        let nuum = parseInt(random() + random());
+        let nuuum = parseInt(random() + random());
+        let rol = parseInt(random());
+        while (num === fftask || num === fstask || num === fttask || num === sftask || num === sstask || num === sttask) {
+            num = parseInt(random() + random());
+            if (num != fftask && num != fstask && num != fttask && num != sftask && num != sstask && num != sttask) {
+                break;
+            }
+        }
+        while (nuum === num || nuum === fftask || nuum === fstask || nuum === fttask || nuum === sftask || nuum === sstask || nuum === sttask) {
+            nuum = parseInt(random() + random());
+            if (nuum != num && nuum != fftask && nuum != fstask && nuum != fttask && nuum != sftask && nuum != sstask && nuum != sttask) {
+                break;
+            }
+        }
+        while (nuuum === num || nuuum === nuum || nuuum === fftask || nuuum === fstask || nuuum === fttask || nuuum === sftask || nuuum === sstask || nuuum === sttask) {
+            nuuum = parseInt(random() + random());
+            if (nuuum != num && nuuum != nuum && nuuum != fftask && nuuum != fstask && nuuum != fttask && nuuum != sftask && nuuum != sstask && nuuum != sttask) {
+                break;
+            }
+        }
+        while (rol === firstRole || rol === secondRole) {
+            rol = parseInt(random());
+            if (rol != firstRole && rol != secondRole) {
+                break;
+            }
+        }
+        switch (num) {
+            case 11:
+                document.getElementById("tasks1").innerHTML = (task11);
+                break;
+            case 12:
+                document.getElementById("tasks1").innerHTML = (task12);
+                break;
+            case 13:
+                document.getElementById("tasks1").innerHTML = (task13);
+                break;
+            case 21:
+                document.getElementById("tasks1").innerHTML = (task21);
+                break;
+            case 22:
+                document.getElementById("tasks1").innerHTML = (task22);
+                break;
+            case 23:
+                document.getElementById("tasks1").innerHTML = (task23);
+                break;
+            case 31:
+                document.getElementById("tasks1").innerHTML = (task31);
+                break;
+            case 32:
+                document.getElementById("tasks1").innerHTML = (task32);
+                break;
+            case 33:
+                document.getElementById("tasks1").innerHTML = (task33);
+                break;
+
+        }
+        switch (nuum) {
+            case 11:
+                document.getElementById("tasks2").innerHTML = (task11);
+                break;
+            case 12:
+                document.getElementById("tasks2").innerHTML = (task12);
+                break;
+            case 13:
+                document.getElementById("tasks2").innerHTML = (task13);
+                break;
+            case 21:
+                document.getElementById("tasks2").innerHTML = (task21);
+                break;
+            case 22:
+                document.getElementById("tasks2").innerHTML = (task22);
+                break;
+            case 23:
+                document.getElementById("tasks2").innerHTML = (task23);
+                break;
+            case 31:
+                document.getElementById("tasks2").innerHTML = (task31);
+                break;
+            case 32:
+                document.getElementById("tasks2").innerHTML = (task32);
+                break;
+            case 33:
+                document.getElementById("tasks2").innerHTML = (task33);
+                break;
+        }
+
+        switch (nuuum) {
+            case 11:
+                document.getElementById("tasks3").innerHTML = (task11);
+                break;
+            case 12:
+                document.getElementById("tasks3").innerHTML = (task12);
+                break;
+            case 13:
+                document.getElementById("tasks3").innerHTML = (task13);
+                break;
+            case 21:
+                document.getElementById("tasks3").innerHTML = (task21);
+                break;
+            case 22:
+                document.getElementById("tasks3").innerHTML = (task22);
+                break;
+            case 23:
+                document.getElementById("tasks3").innerHTML = (task23);
+                break;
+            case 31:
+                document.getElementById("tasks3").innerHTML = (task31);
+                break;
+            case 32:
+                document.getElementById("tasks3").innerHTML = (task32);
+                break;
+            case 33:
+                document.getElementById("tasks3").innerHTML = (task33);
+                break;
+        }
+
+        switch (rol) {
+            case 1:
+                document.getElementById("role").innerHTML = "Crewmate";
+                break;
+            case 2:
+                document.getElementById("role").innerHTML = "Imposter";
+                break;
+            case 3:
+                document.getElementById("role").innerHTML = "Crewmate";
+                break;
+        }
+    }
+
+    function reset() {
+        document.getElementById("tasks1").innerHTML = "";
+        document.getElementById("tasks2").innerHTML = "";
+        document.getElementById("tasks3").innerHTML = "";
+        document.getElementById("role").innerHTML = "";
+    }
+
+
+</script>
+
+</html>
