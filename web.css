@@ -1,5 +1,7 @@
 body {
 	text-align: center;
+	font-family: "Lucida Console", monaco, monospace;
+        background-color: indianred;
 }
 
 a {
@@ -21,4 +23,46 @@ a:hover {
 a:active {
 	text-decoration: none;
 	color: black;
+}
+
+h1 {
+        color: #000000;
+        background-color: indianred;
+        font-size: xx-large;
+        font-weight: 700;
+}
+
+h3 {
+        color: #000000;
+        font-size: 23px;
+}
+
+button {
+        color: #000000;
+        border-radius: 9px;
+        font-family: "Lucida Console", monaco, monospace;
+        font-weight: 700;
+        font-size: larger;
+        box-shadow: none;
+        outline: none;
+        height: 30px;
+        border-style: solid;
+        border-color: #000000;
+        border-width: 3px;
+        background-color: indianred;
+}
+
+button:hover {
+        background-color: #000000;
+        color: indianred;
+}
+
+select {
+        color: indianred;
+        height: 25px;
+        background-color: #000000;
+        border-radius: 9px;
+        font-family: "Lucida Console", monaco, monospace;
+        border: 0;
+        box-shadow: 0;
 }
