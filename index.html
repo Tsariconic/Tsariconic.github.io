@@ -9,10 +9,10 @@
 		<h1>My Website</h1>
 		<h2>Links</h2>
 		<a href="./amongus.html">Among us</a><br />
-		<a href="./RoppersCertificates.html">Roppers Certificates</a>
+		<a href="./RoppersCertificates.html">Roppers Certificates</a><br /><br />
                 <input type="text" id="codeInput" placeholder="Enter the code here">
                 <button onclick="verifyCode()">Check Code</button>
-                <p id="errorMessage" style="color:red;"></p>
+                <p id="errorMessage" style="color:black;"></p>
 	</body>
 	<script>
         async function hashInput(input) {
@@ -25,7 +25,7 @@
         async function verifyCode() {
             const userCode = document.getElementById("codeInput").value;
             const userCodeHash = await hashInput(userCode);
-            const correctHash = "af90b514a08a6fe7b008ba5ebf152648f66a9985e59f9c1c14a43871b8b2e03f";
+            const correctHash = "35115e90002cc4c72b1a30de1e72d34dd900de65c48a78022d4403a6815f07be";
             if (userCodeHash === correctHash) {
                 window.location.href = "https://tsariconic.github.io/Th3Hun7.html";
             } else {
