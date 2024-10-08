@@ -15,18 +15,11 @@
                 <p id="errorMessage" style="color:black;"></p>
 	</body>
 	<script>
-        async function hashInput(input) {
-            const encoder = new TextEncoder();
-            const data = encoder.encode(input);
-            const hash = await crypto.subtle.digest('SHA-256', data);
-            return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
-        }
-
+       
         async function verifyCode() {
             const userCode = document.getElementById("codeInput").value;
-            const userCodeHash = await hashInput(userCode);
-            const correctHash = "35115e90002cc4c72b1a30de1e72d34dd900de65c48a78022d4403a6815f07be";
-            if (userCodeHash === correctHash) {
+            
+            if (userCode === "wuhhuhbuhguh") {
                 window.location.href = "https://tsariconic.github.io/Th3Hun7.html";
             } else {
                 document.getElementById("errorMessage").textContent = "Incorrect code. Please try again.";
