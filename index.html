@@ -10,5 +10,27 @@
 		<h2>Links</h2>
 		<a href="./amongus.html">Among us</a><br />
 		<a href="./RoppersCertificates.html">Roppers Certificates</a>
+                <input type="text" id="codeInput" placeholder="Enter the code here">
+                <button onclick="verifyCode()">Check Code</button>
+                <p id="errorMessage" style="color:red;"></p>
 	</body>
+	<script>
+        async function hashInput(input) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(input);
+            const hash = await crypto.subtle.digest('SHA-256', data);
+            return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        async function verifyCode() {
+            const userCode = document.getElementById("codeInput").value;
+            const userCodeHash = await hashInput(userCode);
+            const correctHash = "af90b514a08a6fe7b008ba5ebf152648f66a9985e59f9c1c14a43871b8b2e03f";
+            if (userCodeHash === correctHash) {
+                window.location.href = "https://tsariconic.github.io/Th3Hun7.html";
+            } else {
+                document.getElementById("errorMessage").textContent = "Incorrect code. Please try again.";
+            }
+        }
+    </script>
 </html>
